@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="UTF-8"> 
+	<title>Lost in Music</title>
+	<script type="text/javascript" src="/eel.js"></script>
+	<link rel="stylesheet" type="text/css" href="header.css">
+	<link rel="stylesheet" type="text/css" href="background.css">
+	<link rel="stylesheet" type="text/css" href="player.css">
+      <link rel="stylesheet" type="text/css" href="button.css">
+      <link rel="stylesheet" type="text/css" href="footer.css">
+	<style>
+	body{
+		margin: 0;
+	}
+	</style>
+
+
+</head>
+
+<header>
+
+<section id="section05" class="demo">
+  <h1>“Where words leave off,<br> MUSIC begins.”</h1>
+  <a href="#queue" style="font-size:14px"><span></span>Scroll</a>
+
+
+  <!-- This div is  intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
+  <div class="overlay"></div>
+
+
+
+  <!-- The HTML5 video element that will create the background video on the header -->
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="piano.mov">
+  </video>
+
+
+  <!-- The header content -->
+  <div class="container h-100">
+    <div class="d-flex h-100 text-center align-items-center">
+      <div class="w-100 text-white">
+        
+ 
+      </div>
+    </div>
+  </div>
+
+
+
+
+</header>
+
+
+
+<div class="header1" id="myHeader">
+  <h1 align="center">Emotions Based Music Player</h1>
+</div>
+
+
+<body>
+	<br><br><br><br><br>
+	
+
+	<script src="code.js"></script>
+
+		<div id="queue"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Queue<input type="button" id="next" onclick="nextsong()"><hr></div>
+
+	<div id="third">
+		<div id="emoji"></div>
+		<div id="xyz">
+		&nbsp;&nbsp;&nbsp;Playing :&nbsp;&nbsp;
+		<label id="sname" align="center">none</label></div>
+		<div id="mod">MODE : Queue-mode <input type="radio" name="mode" checked="checked" onclick="setmod(this)" value="1"> &nbsp;&nbsp;Emotion-mode <input type="radio" name="mode" onclick="setmod(this)" value="2"> &nbsp;&nbsp;Random-mode 
+			<input type="radio" name="mode" onclick="setmod(this)" value="3"></div>
+		<audio controls id="main_slider">
+  		<source id="sel"  type="audio/mpeg">
+Your browser does not support the audio element.
+		</audio>
+
+		<script>
+	document.getElementById("main_slider").onended=function(){
+		if(mod==1)
+			next_in_Q();
+		else if(mod==2){
+			getTime();
+		}
+		else
+			rand_play();
+
+	};
+
+
+		</script>
+		</div>
+
+   <div id="transbox"></div>
+   
+
+
+<script>
+$(function() {
+  $('a[href*=#]').on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
+  });
+});
+</script>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+
+
+
+
+</body>
+</html>
